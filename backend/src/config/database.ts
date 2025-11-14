@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
 export const connectDatabase = async (): Promise<void> => {
-  const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/sms';
+  const mongoUri = process.env.MONGO_URI;
+  console.log(mongoUri);
 
   try {
     await mongoose.connect(mongoUri);
@@ -19,5 +20,3 @@ export const connectDatabase = async (): Promise<void> => {
     console.log('MongoDB disconnected');
   });
 };
-
-

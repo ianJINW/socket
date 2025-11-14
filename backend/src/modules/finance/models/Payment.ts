@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { BaseDocument, PaymentStatus } from '../../../types';
 
 export interface IPayment extends BaseDocument {
@@ -49,8 +49,6 @@ const paymentSchema = new Schema<IPayment>(
     receivedAt: Date,
     idempotencyKey: {
       type: String,
-      index: true,
-      sparse: true,
     },
     meta: Schema.Types.Mixed,
   },

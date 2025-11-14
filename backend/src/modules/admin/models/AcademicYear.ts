@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { BaseDocument } from '../../../types';
 
 export interface ITerm {
@@ -40,7 +40,6 @@ const academicYearSchema = new Schema<IAcademicYear>(
     isActive: {
       type: Boolean,
       default: false,
-      index: true,
     },
   },
   {

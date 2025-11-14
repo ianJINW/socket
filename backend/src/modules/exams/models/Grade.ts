@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { BaseDocument } from '../../../types';
 
 export interface IGrade extends BaseDocument {
@@ -35,7 +35,7 @@ const gradeSchema = new Schema<IGrade>(
     examId: {
       type: Schema.Types.ObjectId,
       ref: 'Exam',
-      index: true,
+      // index is declared below as a schema index to allow flexibility (avoid duplicate index warnings)
     },
     score: {
       type: Number,
